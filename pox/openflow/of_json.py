@@ -327,3 +327,13 @@ def list_switches (ofnexus = None):
 
   r.sort(key=lambda item:item['dpid'])
   return r
+
+
+def aggregated_stats (aggregatedstats):
+  """
+  Get aggregated stats
+  """
+  stats = {}
+  for k,v in fields_of(aggregatedstats).iteritems():
+      stats[k] = v
+  return stats
