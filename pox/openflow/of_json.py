@@ -329,11 +329,12 @@ def list_switches (ofnexus = None):
   return r
 
 
-def aggregated_stats (aggregatedstats):
+def aggregated_stats (switch_pid, aggregatedstats):
   """
   Get aggregated stats
   """
   stats = {}
+  stats['pid'] = switch_pid
   for k,v in fields_of(aggregatedstats).iteritems():
       stats[k] = v
   return stats
